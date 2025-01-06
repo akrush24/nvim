@@ -15,22 +15,20 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 -- Setup lazy.nvim
 require("lazy").setup({
-    { 'phaazon/hop.nvim' },
-    { "nvim-neo-tree/neo-tree.nvim",
+    {'phaazon/hop.nvim'},
+    {'nvim-neo-tree/neo-tree.nvim',
       branch = "v3.x",
       dependencies = {
         "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "nvim-tree/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
       }
     },
-    { 'nvim-treesitter/nvim-treesitter' }
+    {'nvim-treesitter/nvim-treesitter'},
+    {'neovim/nvim-lspconfig'},
+    {'joshdick/onedark.vim'},
+    {'rebelot/kanagawa.nvim'}
 })
+
