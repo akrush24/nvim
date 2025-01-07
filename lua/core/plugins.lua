@@ -17,18 +17,21 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
-    {'phaazon/hop.nvim'},
-    {'nvim-neo-tree/neo-tree.nvim',
+  {'nvim-lua/plenary.nvim'},
+  {'nvim-telescope/telescope.nvim',tag = '0.1.8',dependencies = {'nvim-lua/plenary.nvim'}},
+  {'phaazon/hop.nvim'},
+  {'nvim-neo-tree/neo-tree.nvim', -- file list view
       branch = "v3.x",
       dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
       }
-    },
-    {'nvim-treesitter/nvim-treesitter'},
-    {'neovim/nvim-lspconfig'},
-    {'joshdick/onedark.vim'},
-    {'rebelot/kanagawa.nvim'}
+  },
+  {'nvim-treesitter/nvim-treesitter'}, -- 
+  {'neovim/nvim-lspconfig'}, -- syntacs check
+  {'joshdick/onedark.vim'},{'rebelot/kanagawa.nvim'}, -- color theme
+  {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-path'},{'hrsh7th/cmp-cmdline'}, {'hrsh7th/nvim-cmp'}, -- auto complete
+  {"williamboman/mason.nvim", build = ":MasonUpdate"},
 })
 
